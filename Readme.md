@@ -6,6 +6,8 @@ _______________
 _______________
 
 
+
+
 This is the final project of the graphic computational's course.
 I have rappresent a model of my home in **Three.js** environment.
 The project consists of some scripts, i present here the most functional.
