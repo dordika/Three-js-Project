@@ -12,6 +12,8 @@ This is the final project of the graphic computational's course.
 
 I have rappresent a model of my home in **Three.js** environment.
 
+You can access the project via the link [dordika.github.io](dordika.github.io).
+
 The project consists of some scripts, i present here the most functional.
 
 
@@ -36,4 +38,10 @@ The project consists of some scripts, i present here the most functional.
 
 
 # **What can I do?**
+
+When i load the project, i can active via the controls on top of the page, the first person perspective.
+then i can move in scene with directional keys and mouse, i can open the door, turn on the light, turn on the tv, kick the ball and make the eagle fly, just  to click over them.
+
+
+
 
