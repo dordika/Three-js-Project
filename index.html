@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Dorjan Dika - Final Project</title> 
+    <style>
+      body{
+        margin: 0;
+        overflow: hidden;
+      }
+
+
+      #stats {  /* Align stats top-left */
+        position: absolute;
+        left: 0px;
+        top: 0px;      
+      }
+      #pointer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -20px;
+        width: 40px;
+        height: 40px;
+        display: none;
+        background-image: url("textures/pointer.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      
+    #video {
+      display: none; 
+      position: absolute; 
+      left 10px: 15px; 
+      bottom: 10px;
+    }
+
+    </style> 
+  </head>
+
+  <body>
+    <div id="stats"></div>
+    <div id="pointer"></div>
+    
+    <video id="video" src="movies/rendering3D.ogg" controls="false" autoplay="false"></video> 
+    <script src="libs/three.min.js"></script>
+    <script src="libs/jquery.min.js"></script>  
+    <script src="libs/tween.min.js"></script>
+    
+    <script src="libs/Stats.min.js"></script>
+    <script src="libs/dat.gui.min.js"></script>
+    <script src="libs/TrackballControls.js"></script>
+    <script src="libs/PointerLockControls.js"></script>
+    <script src="libs/csg.js"></script>
+    <script src="libs/ThreeCSG.js"></script>
+    <script src="libs/keyframe.js"></script>
+    <script type="text/javascript" src="libs/OBJLoader.js"></script> 
+    <script type="text/javascript" src="libs/MTLLoader.js"></script> 
+    <script type="text/javascript" src="libs/OBJMTLLoader.js"></script>
+    
+    <script src="scripts/personControls.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/lights.js"></script>
+    <script src="scripts/init.js"></script>
+    <script src="scripts/floors.js"></script>
+    <script src="scripts/walls.js"></script>
+    <script src="scripts/door.js"></script>
+    <script src="scripts/controlGUI.js"></script>
+    <script src="scripts/balcony.js"></script>
+    <script src="scripts/bathroom.js"></script>
+    <script src="scripts/modelLoader.js"></script>
+    <script src="scripts/eagle.js"></script>
+    <script src="scripts/tv.js"></script>
+    <script src="scripts/ballFoot.js"></script>
+
+   <!-- Javascript code that runs our Three.js examples --> 
+    <script>
+        // once everything is loaded, we run our Three.js stuff.
+        $(function () {  
+          
+
+          $('body').append(webGLRenderer.domElement);
+
+          var mesh;
+          
+
+          var loader = new THREE.OBJLoader();
+          loader.load('models/apartment.obj', function (obj) {
+            global_o = obj;
+            var multiMaterial = [
+            new THREE.MeshLambertMaterial({color: 0xEFEFEF, side: THREE.DoubleSide, shading: THREE.FlatShading}),
+            new THREE.MeshBasicMaterial({wireframe: false, overdraw: false, color: 0xffffff, side: THREE.DoubleSide})
+            ];
+
+            mesh = THREE.SceneUtils.createMultiMaterialObject(obj.children[0].geometry, multiMaterial);
+            apartment.add(mesh);
+          });
+
+        scene.add(apartment);
+        mkFloors(apartment);
+        mkDoors(apartment);
+        mkWalls(apartment);
+        putModels(apartment);
+        putLights(scene,apartment);
+        apartment.rotation.x=-Math.PI/2;
+        apartment.rotation.z= Math.PI;
+        apartment.position.set(10,0,-40);
+        
+        render();
+
+      });
+    </script>  
+  </body>
+</html>
