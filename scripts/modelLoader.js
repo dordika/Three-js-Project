@@ -52,7 +52,7 @@ function putModels (apartment) {
 	sitMale.position.set(14.9, 16.9, .4);
 	apartment.add(sitMale);
 	
-	/*flower*/
+	//flower
 	var flowerObj = 'models/balcony/flowerBox/flowerBox.obj';
 	var flowerMtl = 'models/balcony/flowerBox/flowerBox.mtl';
 	var flower = importObjMtl(flowerObj,flowerMtl,true);
@@ -163,6 +163,33 @@ function putModels (apartment) {
 	frizer.position.set(22.5,3,.3);
 	apartment.add(frizer);
 	putObjetcBathroom (apartment);
-
+	
+	var picture = mkPicture("textures/picture/quadro.jpg","textures/picture/cornice-bump.png");
+	picture.position.set(.32,11,2);
+	picture.rotation.x = Math.PI/2;
+	picture.rotation.y = Math.PI/2;
+	picture.scale.set(.25,.25,.25);
+	apartment.add(picture)
 
 }
+	function mkPicture (image, bump) {
+		var w = 8;
+       	var h = 5;
+
+      	// create the ground plane
+      	var geom = new THREE.PlaneGeometry(w,h);
+		var texture = THREE.ImageUtils.loadTexture(image)
+        geom.computeVertexNormals();
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        if (bump) {
+          var bump = THREE.ImageUtils.loadTexture(bump)
+          mat.bumpMap = bump;
+          mat.bumpScale = 0.5;
+        }
+
+        var mesh = new THREE.Mesh(geom, mat);
+
+        return mesh;
+	}

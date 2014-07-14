@@ -3,7 +3,7 @@ function putObjetcBathroom (apartment) {
 	var bathroomFurnitureObj = 'models/bathroom/bathroomFurniture/bathroomFurniture.obj';
 	var bathroomFurnitureMtl = 'models/bathroom/bathroomFurniture/bathroomFurniture.mtl';
 	var bathroomFurniture = importObjMtl(bathroomFurnitureObj,bathroomFurnitureMtl);
-	bathroomFurniture.scale.set(.025, .025, .025);
+	bathroomFurniture.scale.set(.025, .023, .025);
 	bathroomFurniture.rotation.x = Math.PI / 2;
 	bathroomFurniture.rotation.y = Math.PI;
 	bathroomFurniture.position.set(18.5,27.8,.07);
