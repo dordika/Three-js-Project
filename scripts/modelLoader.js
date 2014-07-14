@@ -48,10 +48,19 @@ function putModels (apartment) {
 	sitMale = importObjMtl(sitMaleObj,sitMaleMtl);
 	sitMale.scale.set(0.01, 0.01, 0.01);
 	sitMale.rotation.x = Math.PI / 2;
-	sitMale.rotation.y = Math.PI / 2;
+	sitMale.rotation.z = Math.PI / 2;
 	sitMale.position.set(14.9, 16.9, .4);
 	apartment.add(sitMale);
 	
+	/*flower*/
+	var flowerObj = 'models/balcony/flowerBox/flowerBox.obj';
+	var flowerMtl = 'models/balcony/flowerBox/flowerBox.mtl';
+	var flower = importObjMtl(flowerObj,flowerMtl,true);
+	flower.scale.set(.03, .03, .03);
+	flower.rotation.x = Math.PI / 2;
+	flower.rotation.x = Math.PI / 4;
+	flower.position.set(2,5,.3);
+	apartment.add(flower);
 
 	
 	var palmObj = 'models/palm/fanPalm.obj';
@@ -140,6 +149,7 @@ function putModels (apartment) {
 	kitchen.rotation.y = Math.PI;
 	kitchen.position.set(16, 5.5, .3);
 	apartment.add(kitchen);
+	
 	//Plane sink
 	var planeKitchen = importObjMtl('models/kitchen/lavello/lavello.obj','models/kitchen/lavello/lavello.mtl');
 	planeKitchen.rotation.set(Math.PI/2,Math.PI,0);

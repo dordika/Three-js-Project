@@ -97,11 +97,12 @@
           });
 
         scene.add(apartment);
-        mkFloors(apartment);
+        mkRoof(apartment);
+        /*mkFloors(apartment);
         mkDoors(apartment);
-        mkWalls(apartment);
         putModels(apartment);
-        putLights(scene,apartment);
+        */putLights(scene,apartment);
+        mkWalls(apartment);
         apartment.rotation.x=-Math.PI/2;
         apartment.rotation.z= Math.PI;
         apartment.position.set(10,0,-40);
