@@ -48,7 +48,7 @@ function putModels (apartment) {
 	sitMale = importObjMtl(sitMaleObj,sitMaleMtl);
 	sitMale.scale.set(0.01, 0.01, 0.01);
 	sitMale.rotation.x = Math.PI / 2;
-	sitMale.rotation.z = Math.PI / 2;
+	sitMale.rotation.y = Math.PI / 2;
 	sitMale.position.set(14.9, 16.9, .4);
 	apartment.add(sitMale);
 	
@@ -58,8 +58,8 @@ function putModels (apartment) {
 	var flower = importObjMtl(flowerObj,flowerMtl,true);
 	flower.scale.set(.03, .03, .03);
 	flower.rotation.x = Math.PI / 2;
-	flower.rotation.x = Math.PI / 4;
-	flower.position.set(2,5,.3);
+	flower.rotation.y = Math.PI / 4;
+	flower.position.set(1.7,5,.3);
 	apartment.add(flower);
 
 	
@@ -162,7 +162,6 @@ function putModels (apartment) {
 	frizer.rotation.set(Math.PI/2,Math.PI,0);
 	frizer.position.set(22.5,3,.3);
 	apartment.add(frizer);
-	putObjetcBalcony(apartment);
 	putObjetcBathroom (apartment);
 
 
