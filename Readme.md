@@ -16,10 +16,24 @@ The project consists of some scripts, i present here the most functional.
 
 
 1. **init.js**
-
---- Here i create the base of apartment, skybox texture, and some controls for the operation of rendering.
-
+--- Here I create the base of apartment, skybox texture, and some controls for the operation of rendering.
 
 
+2. **walls.js and floors.js**
+--- In this two scripts I create all walls and floors and apply them to the exported model of opartment.
 
+3. **modelLoader.js**
+--- Here i create all object and put them in the model. 
+
+4. **functions.js**
+--- Here are expressed the useful functions to the rendering of the model
+
+5. **personControls.js**
+--- Here are expressed the functions for the management of first person camera perspective
+
+6. **light.js**
+--- Are created and put all lights in the model.
+
+
+# **What can I do?**
 
